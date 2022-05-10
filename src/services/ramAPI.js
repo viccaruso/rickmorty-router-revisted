@@ -1,7 +1,7 @@
 import fetch from 'cross-fetch';
 
-export const fetchAllCharacters = () => {
-  const response = fetch('https://rickandmortyapi.com/api/character');
+export const fetchAllCharacters = async () => {
+  const response = await fetch('https://rickandmortyapi.com/api/character');
   const { results } = await response.json();
   return results;
-}
+};

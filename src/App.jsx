@@ -1,17 +1,21 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { CharactersProvider } from './context/CharacterContext';
+import CharacterList from './views/CharacterList';
 
 export default function App() {
   return (
-    <Switch>
-      <Route path="/character/:id">
-        <h1>/character/:id</h1>
-      </Route>
-      <Route path="/character">
-        <h1>/character</h1>
-      </Route>
-      <Route path="/">
-        <Redirect to="/character" />
-      </Route>
-    </Switch>
+    <CharactersProvider>
+      <Switch>
+        <Route path="/character/:id">
+          <h1>/character/:id</h1>
+        </Route>
+        <Route path="/character">
+          <CharacterList />
+        </Route>
+        <Route path="/">
+          <Redirect to="/character" />
+        </Route>
+      </Switch>
+    </CharactersProvider>
   );
 }

@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useCharacters } from '../context/CharacterContext';
 
 export default function CharacterDetail() {
@@ -6,7 +6,7 @@ export default function CharacterDetail() {
   const { characters } = useCharacters();
 
   if (!characters.length) {
-    return <p>Loading</p>;
+    return <h1>Please wait while we fetch the characters's details...</h1>;
   } else if (id > characters.length) {
     return <p>Invalid character ID - Maximum ID: {characters.length}</p>;
   } else {
@@ -18,8 +18,7 @@ export default function CharacterDetail() {
           alt={`Image of Rick and Morty character ${characters[id - 1].name}`}
         />
         <p>Status: {characters[id - 1].status}</p>
-
-        {console.log(characters[id - 1])}
+        <Link to="/">Back to main page</Link>
       </div>
     );
   }

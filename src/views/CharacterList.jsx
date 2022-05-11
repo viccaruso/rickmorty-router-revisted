@@ -13,7 +13,10 @@ export default function CharacterList() {
           <div key={index}>
             <h3>{character.name}</h3>
             <Link to={`/character/${character.id}`}>
-              <img src={character.image} />
+              <img
+                src={character.image}
+                alt={`Image of Rick and Morty character ${character.name}`}
+              />
             </Link>
           </div>
         );

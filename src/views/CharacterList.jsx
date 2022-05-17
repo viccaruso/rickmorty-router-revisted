@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom';
 
 export default function CharacterList() {
   const { characters } = useCharacters();
-
-  console.log(characters[2]);
   return (
     <div>
       <h1>Rick & Morty Characters</h1>

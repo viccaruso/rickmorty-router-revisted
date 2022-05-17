@@ -1,8 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import App from '../App';
-import CharacterDetail from './CharacterDetail';
 
 describe('<CharacterDetails />', () => {
   it('Renders a list of Rick & Morty characters and then finds Morty Smith', async () => {
